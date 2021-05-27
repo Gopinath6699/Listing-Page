@@ -10,3 +10,17 @@
 .email-text{
   font-size: 18px;
 }
+
+.btn:focus, .btn.focus {
+  box-shadow: 0 0 0 0.2rem rgb(226, 196, 204);
+}
+
+.btn:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled).active {
+  border-color: #E2C4CC;
+}
+
+.btn:not(:disabled):not(.disabled):active:focus,
+.btn:not(:disabled):not(.disabled).active:focus {
+  box-shadow: 0 0 0 0.2rem rgb(226, 196, 204);
+}
