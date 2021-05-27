@@ -1,0 +1,36 @@
+.card-link {
+  display: flex;
+  border: 1px solid #EDEDEE;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 5px;
+  text-align: left;
+  cursor: pointer;
+  width: 50%;
+}
+
+.card-link:hover{
+  background-color: #FFEEEE;
+}
+
+.card-image {
+  width: 175px;
+  min-width: 175px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.card-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.address {
+  font-size: 16px;
+}
+
+.card-icons{
+  font-size: 22px;
+}

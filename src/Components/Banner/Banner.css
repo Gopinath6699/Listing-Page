@@ -1,12 +1,16 @@
 .banner-wrapper{
-  background-position: top;
-  background-size: cover;
-  background-image: url("../../static/banner.jpg");
   width: 100%;
   height: 350px;
   position: relative;
   border-radius: 15px;
   margin-bottom: 25px;
+}
+
+.banner-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .banner-wrapper::after{
