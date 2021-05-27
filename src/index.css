@@ -1,0 +1,25 @@
+body {
+  margin: 0 auto;
+  background-color: #F6F6F6;
+}
+
+body header, body main, body footer {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
