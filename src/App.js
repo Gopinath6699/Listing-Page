@@ -1,13 +1,16 @@
 import React from "react";
-import Footer from "./Components/Footer";
 
 import NavBar from "./Components/Navbar/NavBar";
+import Banner from "./Components/Banner/Banner";
+import Footer from "./Components/Footer";
+
 
 const App = () => {
   return (
     <>
       <NavBar />
       <main>
+      <Banner />
         <p>
           Content
         </p>
