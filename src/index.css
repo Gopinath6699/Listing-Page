@@ -19,7 +19,15 @@ a:hover {
   text-decoration: none;
 }
 
+footer p{
+  margin: 0;
+}
+
 svg {
   overflow: hidden;
   vertical-align: middle;
+}
+
+main {
+    padding-top: 80px;
 }
