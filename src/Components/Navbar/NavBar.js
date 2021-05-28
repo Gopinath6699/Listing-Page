@@ -18,7 +18,7 @@ const NavBar = () => {
           Trafalgar Organization
         </h5>
       </a>
-      <div className="m-0 d-none d-md-inline-block">
+      <div className="m-0 d-none d-md-inline-block pr-4">
         <a href="/" className="btn">
           <MdEmail className="email-icon mr-2" />
           <span className="email-text py-2 font-weight-bold align-middle">Email Us</span>

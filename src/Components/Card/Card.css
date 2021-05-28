@@ -1,4 +1,4 @@
-.card-link {
+.card-links {
   display: flex;
   border: 1px solid #EDEDEE;
   border-radius: 8px;
@@ -6,10 +6,16 @@
   margin: 5px;
   text-align: left;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
 }
 
-.card-link:hover{
+@media (min-width: 1480px){
+  .card-links {
+    width: 49%;
+  } 
+}
+
+.card-links:hover{
   background-color: #FFEEEE;
 }
 
@@ -21,10 +27,22 @@
   margin-right: 30px;
 }
 
+@media (max-width: 991.98px) {
+  .card-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+}
+
 .card-image img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
 }
 
 .address {
@@ -33,4 +51,15 @@
 
 .card-icons{
   font-size: 22px;
+}
+
+.card-icons-group {
+  margin-top: 10px;
+}
+
+@media (max-width: 991.98px) {
+  .card-icons-group > span {
+    display: block;
+    padding-bottom: 10px;
+  }
 }
