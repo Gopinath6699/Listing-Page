@@ -10,7 +10,7 @@ const Modal = () => {
     <div
       className="modal fade"
       id="Modal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="ModalLabel"
       aria-hidden="true"
     >

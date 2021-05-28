@@ -1,62 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { toast } from "react-toastify";
+
+import firebaseApp from "../../utils/config";
 
 const ContactForm = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log({ firstName, lastName, email, gender });
+
+      try {
+        firebaseApp.database().ref("contacts/").push({
+          firstName,
+          lastName,
+          email,
+          gender,
+        });
+
+        toast("Thanks for contact us ! we will get back to you soon.", {
+          type: "success",
+        });
+
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setGender("");
+      } catch (error) {
+        console.error(error);
+        toast(error, { type: "error" });
+      }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        <label for="firstname" className="form-label">
+        <label htmlFor="firstname" className="form-label">
           First name
         </label>
         <input
           type="text"
           className="form-control"
           id="firstname"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
           required
         />
-        <div className="invalid-feedback">
-          Please select a valid state.
-        </div>
       </div>
       <div className="mb-3">
-        <label for="lastname" className="form-label">
+        <label htmlFor="lastname" className="form-label">
           Last name
         </label>
         <input
           type="text"
           className="form-control"
           id="lastname"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           required
         />
-        <div className="invalid-feedback">
-          Please select a valid state.
-        </div>
       </div>
       <div className="mb-3">
-        <label for="email" className="form-label">
+        <label htmlFor="email" className="form-label">
           Email address
         </label>
         <input
           type="email"
           className="form-control"
           id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           aria-describedby="emailHelp"
         />
-        <div className="invalid-feedback">
-          Please select a valid state.
-        </div>
       </div>
       <div className="dropdown mb-3">
-        <label for="validationCustom04" className="form-label">
+        <label htmlFor="validationCustom04" className="form-label">
           Gender
         </label>
         <select
           className="form-control form-select"
           id="validationCustom04"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
           required
         >
-          <option selected value="Male">
-            Male
-          </option>
+          <option selected>Please select your gender</option>
+          <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
