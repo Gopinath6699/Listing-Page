@@ -28,7 +28,11 @@ const cardIcons = [
 
 const Card = () => {
   return (
-    <div className="d-flex flex-column flex-lg-row card-links">
+    <div
+      className="d-flex flex-column flex-lg-row card-links"
+      data-bs-toggle="modal"
+      data-bs-target="#Modal"
+    >
       <div className="card-image">
         <img src={CardImage} alt="card" />
       </div>
