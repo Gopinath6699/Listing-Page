@@ -29,8 +29,8 @@ const App = () => {
   const getDetails = async (page) => {
     const { data } = await axios.get(
       `https://randomuser.me/api/?page=${page}&result=3`
-    )
-    
+    );
+
     return data.results;
   };
 
@@ -55,7 +55,7 @@ const App = () => {
         <div className="d-flex flex-wrap justify-content-between cards">
           {details &&
             details.map((detail, index) => (
-              <Card key={index} details={details[index]} />
+              <Card key={index} detail={detail} />
             ))}
         </div>
         {loading && (

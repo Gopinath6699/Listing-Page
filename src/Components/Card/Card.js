@@ -26,7 +26,7 @@ const cardIcons = [
   },
 ];
 
-const Card = ({ details }) => {
+const Card = ({ detail }) => {
   return (
     <div
       className="d-flex flex-column flex-lg-row card-links"
@@ -37,9 +37,9 @@ const Card = ({ details }) => {
         <img src={CardImage} alt="card" />
       </div>
       <div>
-        <div className="btn border mb-2">{details.gender}</div>
-        <h3 className="title m-0">{details.email}</h3>
-        <div className="address text-muted mb-1">{details.nat}</div>
+        <div className="btn border mb-2">{detail.gender}</div>
+        <h3 className="title m-0">{detail.email}</h3>
+        <div className="address text-muted mb-1">{detail.nat}</div>
         <div className="card-icons-group">
           {cardIcons.map((item, index) => (
             <span key={index}>
