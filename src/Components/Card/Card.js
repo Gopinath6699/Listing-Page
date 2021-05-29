@@ -26,7 +26,7 @@ const cardIcons = [
   },
 ];
 
-const Card = () => {
+const Card = ({ details }) => {
   return (
     <div
       className="d-flex flex-column flex-lg-row card-links"
@@ -37,11 +37,9 @@ const Card = () => {
         <img src={CardImage} alt="card" />
       </div>
       <div>
-        <div className="btn border mb-2">Apartment</div>
-        <h3 className="title m-0">Vintage</h3>
-        <div className="address text-muted mb-1">
-          in No.11-231 100 Young Street, Frankston, Victoria, 3199, AU
-        </div>
+        <div className="btn border mb-2">{details.gender}</div>
+        <h3 className="title m-0">{details.email}</h3>
+        <div className="address text-muted mb-1">{details.nat}</div>
         <div className="card-icons-group">
           {cardIcons.map((item, index) => (
             <span key={index}>
