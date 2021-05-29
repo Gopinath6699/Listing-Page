@@ -27,6 +27,14 @@ const cardIcons = [
 ];
 
 const Card = ({ detail }) => {
+
+  const address = 
+  `in No.${detail.location.street.number} 
+  ${detail.location.street.name}, 
+  ${detail.location.city}, 
+  ${detail.location.state}, 
+  ${detail.location.country}`;
+
   return (
     <div
       className="d-flex flex-column flex-lg-row card-links"
@@ -37,9 +45,9 @@ const Card = ({ detail }) => {
         <img src={CardImage} alt="card" />
       </div>
       <div>
-        <div className="btn border mb-2">{detail.gender}</div>
-        <h3 className="title m-0">{detail.email}</h3>
-        <div className="address text-muted mb-1">{detail.nat}</div>
+        <div className="btn border mb-2">Apartment</div>
+        <h3 className="title m-0">Vintage</h3>
+        <div className="address text-muted mb-1">{address}</div>
         <div className="card-icons-group">
           {cardIcons.map((item, index) => (
             <span key={index}>
