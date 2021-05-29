@@ -8,11 +8,10 @@ const ContactForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("Male");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     try {
       firebaseApp.database().ref("contacts/").push({
         firstName,
@@ -73,21 +72,19 @@ const ContactForm = () => {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          aria-describedby="emailHelp"
+          required
         />
       </div>
       <div className="dropdown mb-3">
-        <label htmlFor="validationCustom04" className="form-label">
+        <label htmlFor="gender" className="form-label">
           Gender
         </label>
         <select
           className="form-control form-select"
-          id="validationCustom04"
+          id="gender"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
-          required
         >
-          <option selected>Please select your gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
