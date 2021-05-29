@@ -13,28 +13,26 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({ firstName, lastName, email, gender });
+    try {
+      firebaseApp.database().ref("contacts/").push({
+        firstName,
+        lastName,
+        email,
+        gender,
+      });
 
-      try {
-        firebaseApp.database().ref("contacts/").push({
-          firstName,
-          lastName,
-          email,
-          gender,
-        });
+      toast("Thanks for contact us ! we will get back to you soon.", {
+        type: "success",
+      });
 
-        toast("Thanks for contact us ! we will get back to you soon.", {
-          type: "success",
-        });
-
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setGender("");
-      } catch (error) {
-        console.error(error);
-        toast(error, { type: "error" });
-      }
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setGender("");
+    } catch (error) {
+      console.error(error);
+      toast(error, { type: "error" });
+    }
   };
 
   return (
